@@ -1,0 +1,15 @@
+.recetas {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    background-color: bisque;
+
+    height: auto;
+    width: 100%;
+}
+
+.cartas {
+    padding: 1em;
+}

@@ -1,0 +1,60 @@
+.perfil {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: auto;
+
+    background-color: bisque;
+}
+
+.datos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+    height: 37em;
+}
+
+.recetas_fav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: 50%;
+    height: auto;
+
+
+}
+
+.acordeon {
+    overflow-y: scroll;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 20em;
+    width: 100%;
+
+    background-color: rgba(0, 128, 0, 0.618);
+    
+}
+
+.borrar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: black;
+
+    height: 2em;
+    width: 2em;
+
+
+}

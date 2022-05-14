@@ -1,0 +1,21 @@
+.receta_especifica {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: auto;
+
+    background-color: bisque;
+}
+
+.cartica {
+    overflow-y: scroll;
+    height: 5em;
+    width: 17em;
+}
+
+.preparacion {
+    overflow-y: scroll;
+    height: 5em;
+}

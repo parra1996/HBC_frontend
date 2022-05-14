@@ -1,0 +1,93 @@
+.home {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    height: 37em;
+
+    background-color: bisque;
+}
+
+.home_izq {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 37em;
+    width: 50%;
+
+}
+
+.home_izq_somos {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 30em;
+    width: 100%;
+
+}
+
+.quien_soy {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 20em;
+    width: 80%;
+
+    border-radius: 5em;
+
+    padding: 1em;
+
+    background-color: rgba(165, 42, 42, 0.499);
+}
+
+.text {
+    font-size: 4em;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: rgba(165, 42, 42, 0.812);
+
+    font-weight: bolder;
+}
+
+.quien_soy2 {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    font-size: 1.2em;
+    line-height: 2em;
+    font-family:'Times New Roman', Times, serif;
+    color: whitesmoke;
+    font-weight: bold;
+}
+
+.home_izq_dieta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 7em;
+    width: 100%;
+
+}
+
+.home_der {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    height: 37em;
+    width: 50%;
+   
+}
