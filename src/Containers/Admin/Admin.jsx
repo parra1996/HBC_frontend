@@ -56,11 +56,10 @@ const Admin = (props) => {
             };
 
             let res = await axios.get('https://jppl-hbc-back.herokuapp.com/users', config)
-            console.log(res.data, "ESTOS SON LOS RESULTADOS");
             setUsers(res.data);
 
         } catch (err) {
-            console.log(err);
+            <div> No hay Usuarios </div>
         }
 
     }
@@ -71,7 +70,6 @@ const Admin = (props) => {
                 headers: { Authorization: `Bearer ${props.credentials.token}` }
             };
 
-            console.log(id, "ESTO ES ID");
             let res = await axios.delete(`https://jppl-hbc-back.herokuapp.com/users/${id}`, config)
             if (res) {
                 notification.showNotification({
@@ -86,7 +84,11 @@ const Admin = (props) => {
                 }, 2000);
             }
         } catch (error) {
-            console.log("error");
+            notification.showNotification({
+                message: 'hubo un problema al eliminar el usuario',
+                color: "red",
+                autoClose: 4000,
+            })
         }
     }
 
@@ -101,7 +103,6 @@ const Admin = (props) => {
             }
 
             let resultado2 = await axios.post("https://jppl-hbc-back.herokuapp.com/recetas", body);
-            console.log(resultado2, "ESTO ES RESUTLADOOOOOOO");
             if (resultado2) {
                 setDatosReceta(resultado2.data);
                 notification.showNotification({
@@ -126,7 +127,11 @@ const Admin = (props) => {
             }
 
         } catch (err) {
-            console.log(err);
+            notification.showNotification({
+                message: 'receta no agregada',
+                color: "red",
+                autoClose: 2000,
+            })
         }
     }
 

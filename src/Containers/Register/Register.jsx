@@ -9,11 +9,15 @@ import { checkError } from '../../tools';
 
 import { Input } from '@mantine/core';
 import { Button } from '@mantine/core';
+import { useNotifications, updateNotification } from '@mantine/notifications';
+
 
 
 import './Register.css';
 
 const Register = () => {
+
+    const notification = useNotifications();
 
     let navigate = useNavigate();
 
@@ -67,11 +71,6 @@ const Register = () => {
                 return;
             };
         };
-
-        console.log("todo ha ido bien")
-
-        //2construimos el body
-
         let body = {
             nombre: datosUsuario.nombre,
             apellido: datosUsuario.apellido,
@@ -82,19 +81,24 @@ const Register = () => {
             profesion: datosUsuario.profesion,
             fecha_nacimiento: datosUsuario.fecha_nacimiento
         }
-        console.log(body);
         try {
 
             let resultado = await axios.post("https://jppl-hbc-back.herokuapp.com/users/register", body);
-            console.log(resultado);
 
             if (resultado.data.error) {
+
                 setMsgError(resultado.data.error);
+            } else {
+                notification.showNotification({
+                    message: 'te has registrado con exito!',
+                    color: "green",
+                    autoClose: 2000,
+                })
             }
 
             setTimeout(() => {
                 navigate('/login');
-            }, 2000);
+            }, 3000);
 
         } catch (error) {
             console.log(error);
@@ -104,19 +108,19 @@ const Register = () => {
     return (
         <div className='register'>
 
-            <Input variant="default" style={{padding : '.5em'}} name="nombre" placeholder="nombre" color='teal' onChange={(e) => { rellenarDatos(e) }} />
-            <Input variant="default" style={{padding : '.5em'}} name="apellido" placeholder="apellido" color='teal' onChange={(e) => { rellenarDatos(e) }} />
-            <Input variant="default" style={{padding : '.5em'}} name="edad" placeholder="edad" color='teal' onChange={(e) => { rellenarDatos(e) }} />
-            <Input variant="default" style={{padding : '.5em', width: '12.5em'}} type="date" name="fecha_nacimiento" color='teal' placeholder="fecha de nacimiento" onChange={(e) => { rellenarDatos(e) }} />
-            <Input variant="default" style={{padding : '.5em'}} name="email" placeholder="email" color='teal' onChange={(e) => { rellenarDatos(e) }} />
-            <Input variant="default" style={{padding : '.5em'}} name="sexo" placeholder="sexo (mujer/hombre)" color='teal' onChange={(e) => { rellenarDatos(e) }} />
-            <Input variant="default" style={{padding : '.5em'}} name="profesion" placeholder="profesion" color='teal' onChange={(e) => { rellenarDatos(e) }} />
-            <Input variant="default" style={{padding : '.5em'}} type='password' name="contrasena" color='teal' placeholder="contraseña" onChange={(e) => { rellenarDatos(e) }} />
-            <Input variant="default" style={{padding : '.5em'}} type="password" name="contrasena2" placeholder="repite contraseña" color='teal' onChange={(e) => { rellenarDatos(e) }} />
-            <Button color="teal" radius="md" size="md" onClick={()=> registrame()}>
+            <Input variant="default" style={{ padding: '.5em' }} name="nombre" placeholder="nombre" color='teal' onChange={(e) => { rellenarDatos(e) }} />
+            <Input variant="default" style={{ padding: '.5em' }} name="apellido" placeholder="apellido" color='teal' onChange={(e) => { rellenarDatos(e) }} />
+            <Input variant="default" style={{ padding: '.5em' }} name="edad" placeholder="edad" color='teal' onChange={(e) => { rellenarDatos(e) }} />
+            <Input variant="default" style={{ padding: '.5em', width: '12.5em' }} type="date" name="fecha_nacimiento" color='teal' placeholder="fecha de nacimiento" onChange={(e) => { rellenarDatos(e) }} />
+            <Input variant="default" style={{ padding: '.5em' }} name="email" placeholder="email" color='teal' onChange={(e) => { rellenarDatos(e) }} />
+            <Input variant="default" style={{ padding: '.5em' }} name="sexo" placeholder="sexo (mujer/hombre)" color='teal' onChange={(e) => { rellenarDatos(e) }} />
+            <Input variant="default" style={{ padding: '.5em' }} name="profesion" placeholder="profesion" color='teal' onChange={(e) => { rellenarDatos(e) }} />
+            <Input variant="default" style={{ padding: '.5em' }} type='password' name="contrasena" color='teal' placeholder="contraseña" onChange={(e) => { rellenarDatos(e) }} />
+            <Input variant="default" style={{ padding: '.5em' }} type="password" name="contrasena2" placeholder="repite contraseña" color='teal' onChange={(e) => { rellenarDatos(e) }} />
+            <Button color="teal" radius="md" size="md" onClick={() => registrame()}>
                 registrame
             </Button> <br />
-            {msgError}
+            <p> {msgError} </p>
         </div >
     )
 }

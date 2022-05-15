@@ -67,7 +67,6 @@ const Perfil = (props) => {
                 headers: { Authorization: `Bearer ${props.credentials.token}` }
             };
 
-            console.log(id, "ESTO ES ID");
             let res = axios.delete(`https://jppl-hbc-back.herokuapp.com/receta_adquirida/${id}`, config)
             if (res) {
                 notification.showNotification({
@@ -115,10 +114,16 @@ const Perfil = (props) => {
         try {
             //Hacemos el update en la base de datos
             let res = await axios.put(`https://jppl-hbc-back.herokuapp.com/users/`, body, config);
-            console.log("your password has been changed successfully");
             if (res) {
-                //Guardamos en redux
-                // props.dispatch({ type: MODIFY_CREDENTIALS, payload: datosUsuario });
+                notification.showNotification({
+                    message: 'Contraseña cambiada con exito',
+                    color: "green",
+                    autoClose: 2000,
+                })
+                setTimeout(() => {
+                    window.location.reload();
+
+                }, 2000);
             }
         } catch (error) {
             console.log(error)
@@ -131,7 +136,6 @@ const Perfil = (props) => {
             claveAnterior: contrasena.claveAnterior,
             claveNueva: contrasena.claveNueva
         }
-        console.log(body);
 
         let config = {
             headers: { Authorization: `Bearer ${props.credentials.token}` }

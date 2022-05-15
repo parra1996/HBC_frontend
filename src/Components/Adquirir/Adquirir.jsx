@@ -23,7 +23,6 @@ const Adquirir = (props) => {
             recetaID: props.id,
             usuarioId: props.idUser,
         }
-        console.log(body);
 
         let config = {
             headers: { Authorization: `Bearer ${props.token}` }
@@ -55,7 +54,11 @@ const Adquirir = (props) => {
             }
 
         } catch (error) {
-            console.log(error)
+            notification.showNotification({
+                message: 'Hubo un problema al adquirir la receta',
+                color: "red",
+                autoClose: 2000,
+            })
         }
     }
 

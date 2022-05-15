@@ -22,7 +22,7 @@ const Recetas = (props) => {
 
 
     useEffect(() => {
-        console.log(" recetas ha cambiado ", recetas);
+        console.log(" recetas ha ", recetas);
     }, [recetas]);
 
     const trae_recetas = async () => {
@@ -46,7 +46,6 @@ const Recetas = (props) => {
 
     const escoge_receta = (receta) => {
 
-        console.log(receta);
         props.dispatch({ type: RECETA_ESPECIFICA, payload: receta });
 
 

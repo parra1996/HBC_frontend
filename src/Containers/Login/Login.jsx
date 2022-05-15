@@ -46,7 +46,6 @@ const Login = (props) => {
             }
             let resultado = await axios.post("https://jppl-hbc-back.herokuapp.com/users/login", body);
 
-            console.log(resultado.data)
 
             if (resultado.data === "Usuario o contraseña inválido") {
                 setMsgError2("Usuario o contraseña inválido")
