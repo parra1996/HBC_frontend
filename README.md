@@ -38,6 +38,11 @@ si vas a tu perfil puedes ver tus datos como nombre, apellido, correo, numero de
 
 ![](src/img/perfil.png)
 
+### Futuras incorporaciones
+
+Muy pronto los usuarios podran otorgarle sus datos a la nutricionista para que ella les pueda hacer una dieta personalizada de acuerdo a las especificaciones
+que el mismo usuario le otorgue y con sus objetivos deteticos.
+
 
 
 
