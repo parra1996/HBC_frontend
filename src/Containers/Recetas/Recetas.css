@@ -1,13 +1,13 @@
 .recetas {
     display: flex;
-    flex-direction: row;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
 
     background-color: bisque;
 
     height: auto;
-    width: 100%;
+    width: 100vw;
 }
 
 .cartas {

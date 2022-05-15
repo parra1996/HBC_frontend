@@ -22,7 +22,7 @@ const Recetas = (props) => {
 
 
     useEffect(() => {
-        console.log(" films ha cambiado ", recetas);
+        console.log(" recetas ha cambiado ", recetas);
     }, [recetas]);
 
     const trae_recetas = async () => {

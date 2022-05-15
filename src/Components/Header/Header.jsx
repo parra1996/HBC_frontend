@@ -72,8 +72,7 @@ const Header = (props) => {
                 <div className="headercitos"></div>
             </div>
         )
-    }
-     else {
+    } else {
         return (
             <div className='header'>
                 <div className="headercitos">
