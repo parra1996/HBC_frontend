@@ -28,19 +28,11 @@ const Home = () => {
             </div>
             <div className="home_der">
                 <Carousel>
-                    <Carousel.Item interval={3500} >
-                        <img
-                            style={{height : '37em'}}
-                            className="d-block w-100"
-                            src={require('../../img/pasta.png')}
-                            alt="First slide"
-                        />
-                    </Carousel.Item>
                     <Carousel.Item interval={3500}>
                         <img
                             style={{height : '37em'}}
                             className="d-block w-100"
-                            src={require('../../img/pasta.png')}
+                            src={require('../../img/green bowl.jpeg')}
                             alt="Second slide"
                         />
                     </Carousel.Item>
@@ -48,7 +40,7 @@ const Home = () => {
                         <img
                             style={{height : '37em'}}
                             className="d-block w-100"
-                            src={require('../../img/pasta.png')}
+                            src={require('../../img/healthy creame.jpeg')}
                             alt="Third slide"
                         />
                     </Carousel.Item>
@@ -56,7 +48,7 @@ const Home = () => {
                         <img
                             style={{height : '37em'}}
                             className="d-block w-100"
-                            src={require('../../img/pasta.png')}
+                            src={require('../../img/empanadas de platano.jpeg')}
                             alt="Third slide"
                         />
                     </Carousel.Item>
@@ -64,7 +56,7 @@ const Home = () => {
                         <img
                             style={{height : '37em'}}
                             className="d-block w-100"
-                            src={require('../../img/pasta.png')}
+                            src={require('../../img/raspberry.jpeg')}
                             alt="Third slide"
                         />
                     </Carousel.Item>
@@ -72,7 +64,7 @@ const Home = () => {
                         <img
                             style={{height : '37em'}}
                             className="d-block w-100"
-                            src={require('../../img/pasta.png')}
+                            src={require('../../img/pizza waffles.jpeg')}
                             alt="Third slide"
                         />
                     </Carousel.Item>
