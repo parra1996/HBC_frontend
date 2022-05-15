@@ -36,13 +36,13 @@ export const checkError = (type, value) => {
                 return "ok";
             };
             
-        case 'fecha_nacimiento':
+        // case 'fecha_nacimiento':
                 
-            if (/^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$/.test(value)) {
-                return "the date is wrong"
-            } else {
-                return "ok";
-            };
+        //     if (/^(19|20)\d\d([- /.])(0[1-9]|1[012])\2(0[1-9]|[12][0-9]|3[01])$/.test(value)) {
+        //         return "le fecha esta mal"
+        //     } else {
+        //         return "ok";
+        //     };
 
         case 'apellido':
 

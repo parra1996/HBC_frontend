@@ -68,7 +68,7 @@ const Perfil = (props) => {
             };
 
             console.log(id, "ESTO ES ID");
-            let res = axios.delete(`http://localhost:5000/receta_adquirida/${id}`, config)
+            let res = axios.delete(`https://jppl-hbc-back.herokuapp.com/receta_adquirida/${id}`, config)
             if (res) {
                 notification.showNotification({
                     message: 'receta eliminada con exito',
@@ -96,7 +96,7 @@ const Perfil = (props) => {
 
         let id = props.credentials.usuario.id;
 
-        let res = await axios.get(`http://localhost:5000/receta_adquirida/${id}`, config);
+        let res = await axios.get(`https://jppl-hbc-back.herokuapp.com/receta_adquirida/${id}`, config);
 
         setRecetas_adquiridas(res.data);
     }
@@ -112,16 +112,9 @@ const Perfil = (props) => {
             oldPassword: props.credentials.usuario.contrasena,
             newPassword: datosUsuario.newPassword,
         }
-
-        // bcrypt.compareSync(body.oldPassword, props.credentials.usuario.contrasena);
-
-
-        console.log(body, "ESTO ES BODYYYYYYYY");
-
-
         try {
             //Hacemos el update en la base de datos
-            let res = await axios.put(`http://localhost:5000/users/`, body, config);
+            let res = await axios.put(`https://jppl-hbc-back.herokuapp.com/users/`, body, config);
             console.log("your password has been changed successfully");
             if (res) {
                 //Guardamos en redux
@@ -145,7 +138,7 @@ const Perfil = (props) => {
         };
 
         try {
-            let respuesta = await axios.put(`http://localhost:5000/users/${props.credentials.usuario.id}/clave`, body, config);
+            let respuesta = await axios.put(`https://jppl-hbc-back.herokuapp.com/users/${props.credentials.usuario.id}/clave`, body, config);
             if ( respuesta.status === 400 || respuesta.status ===  401) {
                 notification.showNotification({
                     message: 'no se pudo actualizar la contraseña',

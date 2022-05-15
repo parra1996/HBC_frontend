@@ -25,7 +25,7 @@ const Adquirir = (props) => {
 
         try {
 
-            let res = await axios.post("http://localhost:5000/receta_adquirida", body, config);
+            let res = await axios.post("https://jppl-hbc-back.herokuapp.com/receta_adquirida", body, config);
 
             if (res) {
 

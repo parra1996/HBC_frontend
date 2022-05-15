@@ -55,7 +55,7 @@ const Admin = (props) => {
                 headers: { Authorization: `Bearer ${props.credentials.token}` }
             };
 
-            let res = await axios.get('http://localhost:5000/users', config)
+            let res = await axios.get('https://jppl-hbc-back.herokuapp.com/users', config)
             console.log(res.data, "ESTOS SON LOS RESULTADOS");
             setUsers(res.data);
 
@@ -72,7 +72,7 @@ const Admin = (props) => {
             };
 
             console.log(id, "ESTO ES ID");
-            let res = await axios.delete(`http://localhost:5000/users/${id}`, config)
+            let res = await axios.delete(`https://jppl-hbc-back.herokuapp.com/users/${id}`, config)
             if (res) {
                 notification.showNotification({
                     message: 'usuario eliminado con exito',
@@ -100,7 +100,7 @@ const Admin = (props) => {
                 preparacion_2: datosReceta.preparacion_2,
             }
 
-            let resultado2 = await axios.post("http://localhost:5000/recetas", body);
+            let resultado2 = await axios.post("https://jppl-hbc-back.herokuapp.com/recetas", body);
             console.log(resultado2, "ESTO ES RESUTLADOOOOOOO");
             if (resultado2) {
                 setDatosReceta(resultado2.data);

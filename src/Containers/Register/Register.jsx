@@ -82,10 +82,10 @@ const Register = () => {
             profesion: datosUsuario.profesion,
             fecha_nacimiento: datosUsuario.fecha_nacimiento
         }
-
+        console.log(body);
         try {
 
-            let resultado = await axios.post("http://localhost:5000/users/register", body);
+            let resultado = await axios.post("https://jppl-hbc-back.herokuapp.com/users/register", body);
             console.log(resultado);
 
             if (resultado.data.error) {
@@ -109,7 +109,7 @@ const Register = () => {
             <Input variant="default" style={{padding : '.5em'}} name="edad" placeholder="edad" color='teal' onChange={(e) => { rellenarDatos(e) }} />
             <Input variant="default" style={{padding : '.5em', width: '12.5em'}} type="date" name="fecha_nacimiento" color='teal' placeholder="fecha de nacimiento" onChange={(e) => { rellenarDatos(e) }} />
             <Input variant="default" style={{padding : '.5em'}} name="email" placeholder="email" color='teal' onChange={(e) => { rellenarDatos(e) }} />
-            <Input variant="default" style={{padding : '.5em'}} name="sexo" placeholder="sexo" color='teal' onChange={(e) => { rellenarDatos(e) }} />
+            <Input variant="default" style={{padding : '.5em'}} name="sexo" placeholder="sexo (mujer/hombre)" color='teal' onChange={(e) => { rellenarDatos(e) }} />
             <Input variant="default" style={{padding : '.5em'}} name="profesion" placeholder="profesion" color='teal' onChange={(e) => { rellenarDatos(e) }} />
             <Input variant="default" style={{padding : '.5em'}} type='password' name="contrasena" color='teal' placeholder="contraseña" onChange={(e) => { rellenarDatos(e) }} />
             <Input variant="default" style={{padding : '.5em'}} type="password" name="contrasena2" placeholder="repite contraseña" color='teal' onChange={(e) => { rellenarDatos(e) }} />

@@ -16,7 +16,6 @@ const Recetas = (props) => {
     let navigate = useNavigate();
 
     useEffect(() => {
-   
 
         trae_recetas();
     }, []);
@@ -33,11 +32,7 @@ const Recetas = (props) => {
 
         try {
 
-            let res = await axios.get("http://localhost:5000/recetas");
-
-            //Una vez han venido los datos del backend, nosotros, lo siguiente que haremos para que no se pierdan
-            //será setear esos datos en el hook, haciendo que las recetas estén disponibles 
-            //para los return del componente.
+            let res = await axios.get("https://jppl-hbc-back.herokuapp.com/recetas");
 
             setTimeout(() => {
 
@@ -52,11 +47,9 @@ const Recetas = (props) => {
     const escoge_receta = (receta) => {
 
         console.log(receta);
-        //Guardamos la receta escogida en redux
         props.dispatch({ type: RECETA_ESPECIFICA, payload: receta });
 
 
-        //Redirigimos a movieDetail con navigate
         navigate("/receta_especifica");
     }
     if (recetas[0]?.id !== undefined) {
