@@ -56,7 +56,7 @@ const Header = (props) => {
                 <div className="headercitos"></div>
             </div>
         )
-    } else {
+    }else if(props.credentials.usuario.rol === true){
         return (
             <div className='header'>
                 <div className="headercitos">
@@ -68,6 +68,22 @@ const Header = (props) => {
                 <Button color="teal" style={{pointer:'cursor'}} onClick={() => navegar("/recetas")}>Recetas</Button>&nbsp;
                 <Button color="teal" style={{pointer:'cursor'}} onClick={() => logOut()}>LogOut</Button>&nbsp;
                 <Button color="teal" style={{pointer:'cursor'}} onClick={() => navegar('/admin')}>Admin</Button>&nbsp;
+                </div>
+                <div className="headercitos"></div>
+            </div>
+        )
+    }
+     else {
+        return (
+            <div className='header'>
+                <div className="headercitos">
+                    <img className='homeButton'src={require('../../img/aguacte.png')} onClick={()=>navigate('/')} alt="home" />
+                    healthyByC
+                </div>
+                <div className="headercitos">
+                <Button color="teal" style={{pointer:'cursor'}} onClick={() => navegar("/perfil")}>{props.credentials?.usuario.nombre} {props.credentials?.usuario.apellido}</Button>&nbsp;
+                <Button color="teal" style={{pointer:'cursor'}} onClick={() => navegar("/recetas")}>Recetas</Button>&nbsp;
+                <Button color="teal" style={{pointer:'cursor'}} onClick={() => logOut()}>LogOut</Button>&nbsp;
                 </div>
                 <div className="headercitos"></div>
             </div>
