@@ -104,6 +104,25 @@ const Admin = (props) => {
             console.log(resultado2, "ESTO ES RESUTLADOOOOOOO");
             if (resultado2) {
                 setDatosReceta(resultado2.data);
+                notification.showNotification({
+                    message: 'receta agregada con exito',
+                    color: "green",
+                    autoClose: 2000,
+                })
+                setTimeout(() => {
+                    window.location.reload();
+
+                }, 3000);
+            } else {
+                notification.showNotification({
+                    message: 'receta no agregada',
+                    color: "red",
+                    autoClose: 2000,
+                })
+                setTimeout(() => {
+                    window.location.reload();
+                    
+                }, 3000);
             }
 
         } catch (err) {
