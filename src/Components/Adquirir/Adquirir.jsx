@@ -5,9 +5,15 @@ import { useNavigate } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import Alert from 'react-bootstrap/Alert'
 
+
+import { useNotifications, updateNotification } from '@mantine/notifications';
+
 import './Adquirir.css';
 
 const Adquirir = (props) => {
+
+    const notification = useNotifications();
+
 
     let navigate = useNavigate();
 
@@ -29,16 +35,20 @@ const Adquirir = (props) => {
 
             if (res) {
 
-                <Alert variant="success">
-                <Alert.Heading>has adquirido tu receta con exito</Alert.Heading>
-                </Alert>
+                notification.showNotification({
+                    message: 'Has adquirido la receta con exito!',
+                    color: "green",
+                    autoClose: 2000,
+                })
                 setTimeout(() => {
                     navigate('/');
                 }, 3000);
             } else {
-                <Alert variant="danger">
-                <Alert.Heading>no has podido adquirir esta receta</Alert.Heading>
-                </Alert>
+                notification.showNotification({
+                    message: 'Hubo un problema al adquirir la receta',
+                    color: "red",
+                    autoClose: 2000,
+                })
                 setTimeout(() => {
                     navigate('/');
                 }, 3000);
