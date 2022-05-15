@@ -100,6 +100,7 @@ const Admin = (props) => {
                 ingredientes: datosReceta.ingredientes,
                 preparacion: datosReceta.preparacion,
                 preparacion_2: datosReceta.preparacion_2,
+                imagen: datosReceta.imagen,
             }
 
             let resultado2 = await axios.post("https://jppl-hbc-back.herokuapp.com/recetas", body);
@@ -122,7 +123,7 @@ const Admin = (props) => {
                 })
                 setTimeout(() => {
                     window.location.reload();
-                    
+
                 }, 3000);
             }
 
@@ -139,45 +140,49 @@ const Admin = (props) => {
         return (
             <div className='admin'>
                 <div className="admin_izq">
-                    <p>LISTA DE TODOS LOS USUARIOS</p>
-                    {
-                        users.map(resultado => {
-                            return (
+                    <div className="users"> <br/>
+                        <p>LISTA DE TODOS LOS USUARIOS</p>
+                        {
+                            users.map(resultado => {
+                                return (
+                                    <div className="admin_usuarios">
+                                        <div key={resultado.id} className="usuarios1" >
+                                            <Card key={resultado._id} color="green">
+                                                <Text size="lg" style={{ color: "green" }}>id:{resultado.id}. Nombre: {resultado.nombre},{resultado.apellido} </Text>
+                                                <Button color="red" onClick={() => eliminar_usuario(resultado.id)}>
+                                                    Eliminar
+                                                </Button>
+                                            </Card> <br />
+                                        </div>
+                                    </div>
+                                )
+                            })
+                        }
+                    </div>
+                    </div>
+                    <div className="admin_der">
+                        <p>AGREGAR RECETA</p>
+                        <Input variant="default" name="nombre" placeholder="nombre" onChange={(e) => { rellenarDatos(e) }} /><br />
+                        <Input variant="default" name="ingredientes" placeholder="ingredientes" onChange={(e) => { rellenarDatos(e) }} /><br />
+                        <Input variant="default" name="preparacion" placeholder="preparacion (max 250 caracteres)" onChange={(e) => { rellenarDatos(e) }} /><br />
+                        <Input variant="default" name="preparacion_2" placeholder="preparacion" onChange={(e) => { rellenarDatos(e) }} /><br />
+                        <Input variant="default" name="imagen" placeholder="imagen (url)" onChange={(e) => { rellenarDatos(e) }} /><br />
+                        <Button color="green" size="md" onClick={() => agregar_receta()}>
+                            Agregar
+                        </Button>
 
-                                <div key={resultado.id} className="usuarios1" >
-                                    <Card key={resultado._id} color="green">
-                                        <Text size="lg" style={{ color: "green" }}>id:{resultado.id}. Nombre: {resultado.nombre},{resultado.apellido} </Text>
-                                        <Button color="red" onClick={() => eliminar_usuario(resultado.id)}>
-                                            Eliminar
-                                        </Button>
-                                    </Card> <br/>
-                                </div> 
-                            )
-                        })
-                    }
+                    </div>
                 </div>
-                <div className="admin_der">
-                    <p>AGREGAR RECETA</p>
-                    <Input variant="default" name ="nombre"placeholder="nombre" onChange={(e) => { rellenarDatos(e) }} /><br/>
-                    <Input variant="default" name ="ingredientes" placeholder="ingredientes" onChange={(e) => { rellenarDatos(e) }} /><br/>
-                    <Input variant="default" name ="preparacion" placeholder="preparacion (max 250 caracteres)" onChange={(e) => { rellenarDatos(e) }} /><br/>
-                    <Input variant="default" name ="preparacion_2" placeholder="preparacion" onChange={(e) => { rellenarDatos(e) }} /><br/>
-                    <Button color="green" size="md" onClick={()=> agregar_receta()}>
-                      Agregar
-                    </Button>
-
-                </div>
-            </div>
-        )
+                )
     } else {
         return (
-            <div className='loader'>
-                <img src={require('../../img/avocado.gif')} />
-            </div>
-        )
+                <div className='loader'>
+                    <img src={require('../../img/avocado.gif')} />
+                </div>
+                )
     }
 }
 
 export default connect((state) => ({
-    credentials: state.credentials
+                    credentials: state.credentials
 }))(Admin)

@@ -21,11 +21,31 @@
 
 }
 
+.users {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background-color: rgba(165, 42, 42, 0.499);
+    
+
+    height: 37em;
+    width: 50%;
+
+    margin-top: 1em;
+
+    border-radius: 2em;
+
+    overflow-y: scroll;
+}
+
 .usuarios1 {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+
 
 }
 
