@@ -126,17 +126,18 @@ const Admin = (props) => {
                                         <Button color="red" onClick={() => eliminar_usuario(resultado.id)}>
                                             Eliminar
                                         </Button>
-                                    </Card>
-                                </div>
+                                    </Card> <br/>
+                                </div> 
                             )
                         })
                     }
                 </div>
                 <div className="admin_der">
-                    <Input variant="default" name ="nombre"placeholder="nombre" onChange={(e) => { rellenarDatos(e) }} />
-                    <Input variant="default" name ="ingredientes" placeholder="ingredientes" onChange={(e) => { rellenarDatos(e) }} />
-                    <Input variant="default" name ="preparacion" placeholder="preparacion (max 250 caracteres)" onChange={(e) => { rellenarDatos(e) }} />
-                    <Input variant="default" name ="preparacion_2" placeholder="preparacion" onChange={(e) => { rellenarDatos(e) }} />
+                    <p>AGREGAR RECETA</p>
+                    <Input variant="default" name ="nombre"placeholder="nombre" onChange={(e) => { rellenarDatos(e) }} /><br/>
+                    <Input variant="default" name ="ingredientes" placeholder="ingredientes" onChange={(e) => { rellenarDatos(e) }} /><br/>
+                    <Input variant="default" name ="preparacion" placeholder="preparacion (max 250 caracteres)" onChange={(e) => { rellenarDatos(e) }} /><br/>
+                    <Input variant="default" name ="preparacion_2" placeholder="preparacion" onChange={(e) => { rellenarDatos(e) }} /><br/>
                     <Button color="green" size="md" onClick={()=> agregar_receta()}>
                       Agregar
                     </Button>
