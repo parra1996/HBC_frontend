@@ -6,17 +6,19 @@ import axios from 'axios';
 import { connect } from 'react-redux';
 import { LOGIN } from '../../redux/types';
 
-import { Form } from 'react-bootstrap';
-
-
 import { Input } from '@mantine/core';
 import { Button } from '@mantine/core';
+import { useNotifications, updateNotification } from '@mantine/notifications';
+
 
 
 
 import './Login.css';
 
 const Login = (props) => {
+
+    const notification = useNotifications();
+
 
     let navigate = useNavigate();
 
@@ -49,7 +51,11 @@ const Login = (props) => {
             if (resultado.data === "Usuario o contraseña inválido") {
                 setMsgError2("Usuario o contraseña inválido")
             } else {
-
+                notification.showNotification({
+                    message: 'Te has logeado con exito!',
+                    color: "green",
+                    autoClose: 2000,
+                })
                 props.dispatch({ type: LOGIN, payload: resultado.data });
                 navigate("/");
             }
