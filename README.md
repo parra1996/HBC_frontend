@@ -3,6 +3,10 @@
 
 Este proyecto consiste en crear una web donde la nutricionista Caterina Carrasquero, mejor conocida como HealthyByC pueda mostrar sus recetas de comidas saliudables , mostrando que ingredientes se necesitaran y como prepararlas.
 
+### Proyecto deployado en: 
+
+https://master.df6nkyfgw0e9.amplifyapp.com/
+
 ### Tecnologias usadas:
 
 <img src="https://techblog.sdstudio.top/wp-content/uploads/2021/09/ba11d056cec27254d89b310745e4071b-1.png" width="200" height="100" /><img src="https://i1.wp.com/blog.enriqueoriol.com/wp-content/uploads/2018/08/reduxLogo.png?fit=1024%2C684" width="200" height="100" /><img src="https://miro.medium.com/max/800/0*aH8YUI7nqAZ6b-V_.png" width="200" height="100" /><img src="https://s3-us-west-2.amazonaws.com/devcodepro/media/tutorials/instalacion-de-nodejs-en-ubuntu-t1.jpg" width="200" height="100" /><img src="https://external-preview.redd.it/S3jXaDIYR3kVbHqp_i5FJE2eE6PMgZWSZ4XyiPegTTI.jpg?auto=webp&s=61089211f4ba4a22a3e096bfd7854948e30eab75" width="200" height="100" /><img src="https://miro.medium.com/max/1400/0*xZYBctW4jbifKdQK.jpg" width="200" height="100" />
